@@ -18,12 +18,16 @@ const lista = document.getElementById("lista");
 //console.log(lista);
 
 const arrayElement = ["primer elemento", "segundo", "tercero"];
-arrayElement.forEach((item) => {
+//arrayElement.forEach((item) => {
   //console.log(item);
 
-  const li = document.createElement("li");
-  li.textContent = item;
+//const li = document.createElement("li");
+//  li.textContent = item;
 
-  lista.appendChild(li);
+  //lista.appendChild(li);
 
-});
+//});
+
+arrayElement.forEach(item =>{
+  lista.innerHTML += `<li>${item}</li>`
+})

@@ -1,33 +1,23 @@
-/*document.querySelector('h3');
-console.log(document.querySelector('h3'));
-console.log(document.querySelector('.h3-danger'));
-console.log(document.querySelector('#parrafo'));
-console.log(document.getElementById('parrafo'));
 
-console.log(document.querySelectorAll('.h3-danger'));
 
-felipe77
-
-const parrafo = document.querySelector('#parrafo');
-parrafo.textContent = "Texto desde JS";
-parrafo.innerHTML ='<b> texto con innerHTML</b>'
-parrafo.classList.add('h3-daanger')
-
-*/
 const lista = document.getElementById("lista");
-//console.log(lista);
 
-const arrayElement = ["primer elemento", "segundo", "tercero"];
-//arrayElement.forEach((item) => {
-  //console.log(item);
 
-//const li = document.createElement("li");
-//  li.textContent = item;
+const arrayItem = ["item1","item2","item3"];
 
-  //lista.appendChild(li);
 
-//});
+const fragment = document.createDocumentFragment();
 
-arrayElement.forEach(item =>{
-  lista.innerHTML += `<li>${item}</li>`
-})
+arrayItem.forEach(item=>{
+  const li = document.createElement('li');
+  li.textContent = item;
+
+  const childNode = fragment.firstChild;
+  console.log(item, childNode);
+
+
+  fragment.insertBefore(li,childNode);
+  //fragment.appendChild(li);
+});
+
+lista.appendChild(fragment);

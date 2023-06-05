@@ -1,23 +1,23 @@
+const lista = document.querySelector('#lista');
 
-
-const lista = document.getElementById("lista");
-
-
-const arrayItem = ["item1","item2","item3"];
+const arrayLista = ['item 1', 'item 2', 'item 3'];
 
 
 const fragment = document.createDocumentFragment();
 
-arrayItem.forEach(item=>{
+arrayLista.forEach(item =>{
   const li = document.createElement('li');
-  li.textContent = item;
+  li.classList.add('list');
+  const b = document.createElement('b');
+  b.textContent = 'Nombre: ';
+  
+  const span = document.createElement('span');
+  span.classList.add('text-danger');
+  span.textContent = item;
+  li.appendChild(b);
+  li.appendChild(span);
 
-  const childNode = fragment.firstChild;
-  console.log(item, childNode);
-
-
-  fragment.insertBefore(li,childNode);
-  //fragment.appendChild(li);
-});
-
+  fragment.appendChild(li);
+})
 lista.appendChild(fragment);
+
